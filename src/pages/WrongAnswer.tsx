@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const assetPathPrefix = "/assets";
 const imgArrowRight = `${assetPathPrefix}/010d0.svg`;
@@ -6,9 +6,10 @@ const imgArrowRight = `${assetPathPrefix}/010d0.svg`;
 interface WrongAnswerProps {
   quizNumber: number;
   nextPath: string;
+  retryPath: string;
 }
 
-export default function WrongAnswer({ quizNumber, nextPath }: WrongAnswerProps) {
+export default function WrongAnswer({ quizNumber, nextPath, retryPath }: WrongAnswerProps) {
   const navigate = useNavigate();
 
   return (
@@ -64,12 +65,12 @@ export default function WrongAnswer({ quizNumber, nextPath }: WrongAnswerProps) 
           }}
         >
           아쉽지만 틀렸습니다.<br />
-          정답을 확인하고 다음으로 넘어가요!
+          다시 한번 도전해보세요!
         </p>
 
-        {/* 다음 문제 버튼 */}
+        {/* 다시 풀어보기 버튼 */}
         <button
-          onClick={() => navigate(nextPath)}
+          onClick={() => navigate(retryPath)}
           className="mt-2 flex items-center justify-center gap-4 rounded-[48px] cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
           style={{
             backgroundColor: "#206c38",
@@ -80,13 +81,13 @@ export default function WrongAnswer({ quizNumber, nextPath }: WrongAnswerProps) 
           <span
             style={{
               fontFamily: "'Pretendard:ExtraBold', sans-serif",
-              fontSize: "28px",
+              fontSize: "clamp(20px, 5vw, 26px)",
               fontWeight: 800,
               color: "white",
-              letterSpacing: "6px",
+              letterSpacing: "3px",
             }}
           >
-            다음 문제
+            다시 풀어보기
           </span>
           <img src={imgArrowRight} alt="" className="h-[22px]" style={{ transform: "rotate(90deg)" }} />
         </button>

@@ -6,7 +6,7 @@ const imgGroup8 = `${assetPathPrefix}/e4279.svg`;
 const imgFence = `${assetPathPrefix}/bc9cb.svg`;
 const imgGrass = `${assetPathPrefix}/4c408.svg`;
 const imgCloud = `${assetPathPrefix}/0cdf2.svg`;
-const imgBanner = `${assetPathPrefix}/269c7.svg`;
+const imgBannerBg = `${assetPathPrefix}/269c7.svg`;
 const imgMinistry = `${assetPathPrefix}/0e6be.svg`;
 const imgLivestock = `${assetPathPrefix}/9632e.svg`;
 const imgLivestockIcon = `${assetPathPrefix}/11df2.svg`;
@@ -16,10 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="min-h-screen w-full flex flex-col items-center"
-      style={{ backgroundColor: "#d3e9dc" }}
-    >
+    <div className="min-h-screen w-full flex flex-col items-center" style={{ backgroundColor: "#d3e9dc" }}>
       <div className="w-full max-w-[660px] flex flex-col items-center relative overflow-hidden">
 
         {/* Cloud */}
@@ -28,48 +25,31 @@ export default function Home() {
         </div>
 
         {/* Banner pill */}
-        <div className="relative z-10 mt-4">
-          <img src={imgBanner} alt="" className="h-[48px]" />
-          <p
-            className="absolute inset-0 flex items-center justify-center text-white text-center"
-            style={{
-              fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif",
-              fontSize: "24px",
-              fontWeight: 400,
-            }}
-          >
+        <div className="relative z-10 mt-4 inline-flex items-center justify-center anim-float-up-in" style={{ animationDelay: "0.1s" }}>
+          <img src={imgBannerBg} alt="" className="h-[48px]" />
+          <span className="absolute inset-0 flex items-center justify-center text-white"
+            style={{ fontFamily: "'Mango Byeolbyeol:Regular', sans-serif", fontSize: "24px" }}>
             저탄소 인증 축산물과 친해지는
-          </p>
+          </span>
         </div>
 
-        {/* Title */}
-        <p
-          className="relative z-10 mt-2 text-center leading-none"
-          style={{
-            fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif",
-            fontSize: "clamp(48px, 10vw, 72px)",
-            fontWeight: 400,
-            color: "#295b34",
-          }}
-        >
+        {/* Main title (Mango Byeolbyeol) */}
+        <p className="relative z-10 mt-3 text-center leading-none anim-float-up-in" style={{ animationDelay: "0.25s", fontFamily: "'Mango Byeolbyeol:Regular', sans-serif", fontSize: "clamp(52px, 10vw, 72px)" }}>
           <span style={{ color: "#3165c7" }}>O</span>
           <span style={{ color: "#e46f6f" }}>X</span>
-          <span>퀴즈 이벤트</span>
+          <span style={{ color: "#295b34", fontSize: "clamp(46px, 9vw, 64px)" }}>퀴즈 이벤트</span>
         </p>
 
         {/* Subtitle */}
-        <div
-          className="relative z-10 mt-4 text-center"
-          style={{ color: "#206c38", lineHeight: "39px" }}
-        >
-          <p style={{ fontFamily: "'Pretendard:Bold', sans-serif", fontSize: "26px", fontWeight: 700 }}>
+        <div className="relative z-10 mt-4 text-center anim-float-up-in" style={{ color: "#206c38", animationDelay: "0.35s" }}>
+          <p style={{ fontFamily: "'Pretendard:Bold', sans-serif", fontSize: "clamp(17px, 3.8vw, 26px)", letterSpacing: "-0.02em", lineHeight: 1.6 }}>
             지구를 생각하는 여러분!
           </p>
-          <p style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "24px", fontWeight: 400 }}>
+          <p style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(15px, 3.4vw, 24px)", letterSpacing: "-0.02em", lineHeight: 1.6 }}>
             간단한 OX 퀴즈를 통해
           </p>
-          <p style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "24px", fontWeight: 400 }}>
-            <span style={{ fontFamily: "'Hakgyoansim EunhasuOTF:R', 'Noto Sans KR', sans-serif", color: "#389d55", fontSize: "28px" }}>
+          <p style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(15px, 3.4vw, 24px)", letterSpacing: "-0.02em", lineHeight: 1.6 }}>
+            <span style={{ fontFamily: "'Hakgyoansim EunhasuOTF:R', sans-serif", color: "#389d55", fontSize: "clamp(17px, 3.8vw, 28px)", letterSpacing: "-0.01em" }}>
               저탄소 인증 축산물 알아보고 선물
             </span>
             {" 받아가세요!"}
@@ -78,40 +58,37 @@ export default function Home() {
 
         {/* Characters & fence scene */}
         <div className="relative w-full mt-6" style={{ minHeight: "360px" }}>
-          <div
-            className="absolute w-[140%] left-[-20%]"
-            style={{ top: "55%", mixBlendMode: "multiply" }}
-          >
+          {/* Fence behind characters */}
+          <div className="absolute w-[140%] left-[-20%]" style={{ top: "55%", mixBlendMode: "multiply", zIndex: 1 }}>
             <img src={imgFence} alt="" className="w-full" />
           </div>
-          <div className="relative z-10 flex justify-center">
+
+          {/* Character group */}
+          <div className="relative flex justify-center" style={{ zIndex: 2, height: "320px" }}>
             <img
               src={imgChatGpt}
               alt="저탄소 인증 축산물 캐릭터"
-              className="w-[85%] max-w-[500px] relative z-10"
+              className="w-[90%] max-w-[540px] object-contain object-bottom"
+              style={{
+                animation: 'char-enter 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s both, char-float 3.6s ease-in-out 1.3s infinite',
+              }}
             />
           </div>
+
+          {/* Grass overlay */}
           <div className="absolute bottom-0 left-[-5%] w-[130%] z-0">
             <img src={imgGrass} alt="" className="w-full" />
           </div>
         </div>
 
         {/* START button */}
-        <div className="relative z-10 mt-6 px-8 w-full flex justify-center">
+        <div className="relative z-10 mt-6 px-8 w-full flex justify-center anim-pop-in" style={{ animationDelay: "0.65s" }}>
           <button
             onClick={() => navigate("/quiz/1")}
-            className="w-full max-w-[400px] h-[72px] rounded-[48px] flex items-center justify-center cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
+            className="w-full max-w-[400px] h-[96px] rounded-[48px] flex items-center justify-center cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
             style={{ backgroundColor: "#206c38" }}
           >
-            <span
-              style={{
-                fontFamily: "'Pretendard:Black', sans-serif",
-                fontSize: "clamp(24px, 5vw, 32px)",
-                fontWeight: 900,
-                color: "white",
-                letterSpacing: "9.6px",
-              }}
-            >
+            <span style={{ fontFamily: "'Pretendard:Black', sans-serif", fontSize: "32px", fontWeight: 900, color: "white", letterSpacing: "9.6px" }}>
               START!
             </span>
           </button>
@@ -130,28 +107,11 @@ export default function Home() {
               { label: "지급방법", value: "참여자 추첨을 통해 SMS 발송(11월 중)", dark: false },
             ].map(({ label, value, dark }) => (
               <div key={label} className="flex items-center gap-3 py-1">
-                <span
-                  className="shrink-0 px-3 py-1 rounded-[18.5px] text-white"
-                  style={{
-                    fontFamily: "'Pretendard:Bold', sans-serif",
-                    fontSize: "clamp(14px, 3.5vw, 22px)",
-                    fontWeight: 700,
-                    backgroundColor: dark ? "#4c7dda" : "#81a8f2",
-                    minWidth: "80px",
-                    textAlign: "center",
-                  }}
-                >
+                <span className="shrink-0 px-3 py-1 rounded-[18.5px] text-white"
+                  style={{ fontFamily: "'Pretendard:Bold', sans-serif", fontSize: "clamp(14px, 3.5vw, 22px)", fontWeight: 700, backgroundColor: dark ? "#4c7dda" : "#81a8f2", minWidth: "80px", textAlign: "center" }}>
                   {label}
                 </span>
-                <span
-                  style={{
-                    fontFamily: "'Pretendard:Regular', sans-serif",
-                    fontSize: "clamp(13px, 3vw, 20px)",
-                    fontWeight: 400,
-                    color: "#000",
-                    wordBreak: "keep-all",
-                  }}
-                >
+                <span style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(13px, 3vw, 20px)", color: "#000", wordBreak: "keep-all" }}>
                   {value}
                 </span>
               </div>
@@ -169,15 +129,7 @@ export default function Home() {
             </div>
             <img src={imgEdiya} alt="에디야커피" className="h-[20px]" />
           </div>
-          <p
-            style={{
-              fontFamily: "'Pretendard:Regular', sans-serif",
-              fontSize: "18px",
-              fontWeight: 400,
-              color: "#7b8b80",
-              textAlign: "center",
-            }}
-          >
+          <p style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "18px", color: "#7b8b80", textAlign: "center" }}>
             축산물품질평가원 ALL RIGHTS RESERVED
           </p>
         </div>

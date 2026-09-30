@@ -23,31 +23,25 @@ export default function Complete() {
       <div className="w-full max-w-[660px] flex flex-col items-center relative overflow-hidden">
 
         {/* Cloud */}
-        <div className="w-full flex justify-center mt-8 px-4 relative z-10">
+        <div className="anim-float-up-in w-full flex justify-center mt-8 px-4 relative z-10" style={{ animationDelay: "0.1s" }}>
           <img src={imgCloud} alt="" className="w-[80%] max-w-[500px]" />
         </div>
 
-        {/* Title */}
-        <p
-          className="relative z-10 mt-4 text-center"
-          style={{
-            fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif",
-            fontSize: "clamp(40px, 9vw, 58px)",
-            color: "#295b34",
-            lineHeight: "87px",
-          }}
-        >
-          <span>저탄소 인증 축산물</span><br />
-          <span>알아보기 완료!</span>
+        {/* Title (Mango Byeolbyeol) */}
+        <p className="anim-float-up-in relative z-10 mt-4 text-center px-4"
+          style={{ fontFamily: "'Mango Byeolbyeol:Regular', sans-serif", fontSize: "clamp(38px, 8vw, 58px)", color: "#295b34", lineHeight: 1.2, animationDelay: "0.25s" }}>
+          <span style={{ display: "block" }}>저탄소 인증 축산물</span>
+          <span style={{ display: "block" }}>알아보기 완료!</span>
         </p>
 
         {/* Characters + fence scene */}
-        <div className="relative w-full mt-2" style={{ minHeight: "300px" }}>
+        <div className="anim-pop-in relative w-full mt-2" style={{ minHeight: "300px", animationDelay: "0.4s" }}>
           <div className="absolute w-[140%] left-[-20%]" style={{ top: "50%", mixBlendMode: "multiply" }}>
             <img src={imgFence} alt="" className="w-full" />
           </div>
           <div className="relative z-10 flex justify-center">
-            <img src={imgCharacters} alt="저탄소 인증 캐릭터들" className="w-[90%] max-w-[560px] relative z-10" />
+            <img src={imgCharacters} alt="저탄소 인증 캐릭터들" className="w-[90%] max-w-[560px] relative z-10"
+              style={{ animation: "char-float 4s ease-in-out 1s infinite" }} />
           </div>
           <div className="absolute bottom-0 left-[-5%] w-[130%] z-0">
             <img src={imgGrass} alt="" className="w-full" />
@@ -55,7 +49,7 @@ export default function Complete() {
         </div>
 
         {/* Prize info */}
-        <div className="relative z-10 mt-6 px-6 flex flex-col items-center gap-5 w-full">
+        <div className="anim-float-up-in relative z-10 mt-6 px-6 flex flex-col items-center gap-5 w-full" style={{ animationDelay: "0.55s" }}>
           <p className="text-center" style={{ lineHeight: "45px" }}>
             <span style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(22px, 4.5vw, 30px)", color: "#000" }}>퀴즈에 참여하신 분들 중</span><br />
             <span
@@ -86,7 +80,7 @@ export default function Complete() {
             </p>
             <button
               onClick={() => navigate("/form")}
-              className="flex items-center justify-center gap-6 rounded-[48px] cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
+              className="flex items-center justify-center gap-4 rounded-[48px] cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
               style={{
                 backgroundColor: "#206c38",
                 width: "clamp(280px, 70%, 400px)",
@@ -96,10 +90,10 @@ export default function Complete() {
               <span
                 style={{
                   fontFamily: "'Pretendard:ExtraBold', sans-serif",
-                  fontSize: "32px",
+                  fontSize: "clamp(22px, 5vw, 28px)",
                   fontWeight: 800,
                   color: "white",
-                  letterSpacing: "9.6px",
+                  letterSpacing: "3px",
                 }}
               >
                 개인정보 입력

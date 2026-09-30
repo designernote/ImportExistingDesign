@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 @import 'tailwindcss';
 
 /* Pretendard from CDN */
@@ -8,21 +9,15 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Pretendard:Bold';
-  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Pretendard:Black';
-  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Black.woff2') format('woff2');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Pretendard:Medium';
   src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Medium.woff2') format('woff2');
   font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard:Bold';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -31,18 +26,56 @@
   font-weight: 800;
   font-style: normal;
 }
-/* Mango Byeolbyeol: blocked in this Make file — falling back to Noto Sans KR */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
 @font-face {
-  font-family: 'Mango Byeolbyeol:Regular';
-  src: local('NotoSansKR-Regular');
-  font-weight: 400;
+  font-family: 'Pretendard:Black';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
   font-style: normal;
 }
-/* Hakgyoansim EunhasuOTF:R: blocked — falling back to Noto Sans KR */
+
+@keyframes float-up-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.7) translateY(20px); }
+  70%  { transform: scale(1.06) translateY(-4px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+/* Character group animations */
+@keyframes char-enter {
+  from { opacity: 0; transform: translateY(60px) scale(0.88); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes char-float {
+  0%   { transform: translateY(0)    rotate(-0.8deg) scale(1);    }
+  30%  { transform: translateY(-18px) rotate(0deg)   scale(1.02); }
+  60%  { transform: translateY(-8px)  rotate(0.8deg) scale(1.01); }
+  100% { transform: translateY(0)    rotate(-0.8deg) scale(1);    }
+}
+
+.anim-float-up-in {
+  animation: float-up-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-pop-in {
+  animation: pop-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-card-in {
+  animation: float-up-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
 @font-face {
   font-family: 'Hakgyoansim EunhasuOTF:R';
-  src: local('NotoSansKR-Regular');
-  font-weight: 400;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2508-2@1.0/HakgyoansimJayeonR.woff2') format('woff2');
+  font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mango Byeolbyeol:Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoByeolbyeol.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
