@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import WrongAnswer from "./WrongAnswer";
 
 const assetPathPrefix = "/assets";
-const imgCharacter = `${assetPathPrefix}/edf63.png`;
-const imgLowCarbon = `${assetPathPrefix}/91d89.png`;
+const imgBull = `${assetPathPrefix}/fa1ea.png`;
+const imgMilk = `${assetPathPrefix}/81b13.png`;
 const imgMinistry = `${assetPathPrefix}/0e6be.svg`;
 const imgLivestock = `${assetPathPrefix}/9632e.svg`;
 const imgLivestockIcon = `${assetPathPrefix}/11df2.svg`;
@@ -14,13 +14,13 @@ const imgCardBg = `${assetPathPrefix}/53ce9.svg`;
 const imgArrow = `${assetPathPrefix}/5bc33.svg`;
 const imgDivider = `${assetPathPrefix}/6815e.svg`;
 
-export default function Quiz1() {
+export default function Quiz2() {
   const navigate = useNavigate();
   const [showWrong, setShowWrong] = useState(false);
 
   const handleAnswer = (answer: "O" | "X") => {
-    if (answer === "O") {
-      navigate("/quiz/1/correct");
+    if (answer === "X") {
+      navigate("/quiz/2/correct");
     } else {
       setShowWrong(true);
     }
@@ -43,39 +43,31 @@ export default function Quiz1() {
               <img src={imgCardBg} alt="" className="w-full h-full object-fill opacity-60" />
             </div>
 
-            {/* Q1 badge */}
+            {/* Q2 badge */}
             <div className="relative z-10 -mt-8 flex flex-col items-center">
-              <div
-                className="flex items-center justify-center w-[135px] h-[91px] rounded-[45.5px]"
-                style={{ backgroundColor: "#295b34" }}
-              >
-                <span style={{ fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif", fontSize: "58px", color: "white", lineHeight: "72px" }}>
-                  Q1
-                </span>
+              <div className="flex items-center justify-center w-[135px] h-[91px] rounded-[45.5px]" style={{ backgroundColor: "#295b34" }}>
+                <span style={{ fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif", fontSize: "58px", color: "white", lineHeight: "72px" }}>Q2</span>
               </div>
               <img src={imgArrow} alt="" className="w-[40px] -mt-1" style={{ transform: "rotate(180deg)" }} />
             </div>
 
-            {/* Question title */}
             <div className="relative z-10 mt-4 text-center" style={{ fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif", fontSize: "clamp(40px, 8vw, 58px)", color: "#295b34", lineHeight: "72px" }}>
-              <p>저탄소 인증</p>
-              <p>축산물이란?</p>
+              <p>어떻게</p>
+              <p>확인할까?</p>
             </div>
 
-            {/* Question text */}
             <div className="relative z-10 mt-6 px-6 flex flex-col items-center gap-2 w-full">
               <p className="text-center" style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(20px, 4.5vw, 28px)", color: "#000", lineHeight: "45px" }}>
-                축산물 생산 과정에서
+                저탄소 인증 축산물은
               </p>
               <img src={imgDivider} alt="" className="w-full max-w-[496px]" />
               <p className="text-center" style={{ lineHeight: "45px" }}>
-                <span style={{ fontFamily: "'Hakgyoansim EunhasuOTF:R', 'Noto Sans KR', sans-serif", fontSize: "clamp(22px, 5vw, 32px)", color: "#389d55" }}>온실가스</span>
-                <span style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(20px, 4.5vw, 28px)", color: "#000" }}>를 줄인 친환경 축산물이다?</span>
+                <span style={{ fontFamily: "'Hakgyoansim EunhasuOTF:R', 'Noto Sans KR', sans-serif", fontSize: "clamp(22px, 5vw, 32px)", color: "#389d55" }}>제품을 보고선 확인</span>
+                <span style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "clamp(20px, 4.5vw, 28px)", color: "#000" }}>할 수 없다?</span>
               </p>
               <img src={imgDivider} alt="" className="w-full max-w-[496px]" />
             </div>
 
-            {/* O / X buttons */}
             <div className="relative z-10 mt-8 flex gap-8 items-center justify-center px-6">
               <button onClick={() => handleAnswer("O")} className="flex items-center justify-center rounded-[42px] transition-transform hover:scale-105 active:scale-95 cursor-pointer" style={{ width: "clamp(140px, 35vw, 235px)", height: "clamp(140px, 35vw, 235px)", backgroundColor: "#4c7dda" }}>
                 <span style={{ fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif", fontSize: "clamp(80px, 18vw, 128px)", color: "white", lineHeight: 1 }}>O</span>
@@ -85,19 +77,21 @@ export default function Quiz1() {
               </button>
             </div>
 
-            {/* Character images */}
-            <div className="relative z-10 w-full mt-4 flex justify-center items-end" style={{ height: "160px" }}>
-              <img src={imgCharacter} alt="캐릭터" className="absolute" style={{ height: "140px", left: "calc(50% - 120px)", bottom: "0" }} />
-              <img src={imgLowCarbon} alt="저탄소 인증" className="absolute" style={{ width: "100px", right: "8%", bottom: "0" }} />
+            <div className="relative z-10 w-full mt-4 flex justify-center items-end" style={{ height: "180px" }}>
+              <img src={imgBull} alt="소 캐릭터" className="absolute" style={{ height: "160px", left: "calc(50% - 120px)", bottom: "0" }} />
+              <div className="absolute" style={{ right: "10%", bottom: "0" }}>
+                <div style={{ transform: "scaleY(-1) rotate(180deg)" }}>
+                  <img src={imgMilk} alt="" style={{ height: "130px" }} />
+                </div>
+                <span className="absolute" style={{ fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif", fontSize: "36px", color: "#159b3c", top: "30px", left: "50%", transform: "translateX(-50%)" }}>?</span>
+              </div>
             </div>
           </div>
 
-          {/* Background deco */}
           <div className="w-[120%] -ml-[10%] mt-[-20px] relative z-0">
             <img src={imgBgDeco} alt="" className="w-full" />
           </div>
 
-          {/* Footer */}
           <div className="relative z-10 mt-4 mb-8 px-4 w-full flex flex-col items-center gap-3">
             <div className="flex items-center gap-6 flex-wrap justify-center">
               <img src={imgMinistry} alt="농림축산식품부" className="h-[40px]" />
@@ -114,7 +108,7 @@ export default function Quiz1() {
         </div>
       </div>
 
-      {showWrong && <WrongAnswer quizNumber={1} nextPath="/quiz/1/correct" />}
+      {showWrong && <WrongAnswer quizNumber={2} nextPath="/quiz/2/correct" />}
     </div>
   );
 }
