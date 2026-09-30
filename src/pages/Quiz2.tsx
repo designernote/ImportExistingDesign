@@ -72,11 +72,11 @@ export default function Quiz2() {
             <div className="anim-float-up-in relative z-10 w-full mt-4 flex justify-center items-end" style={{ height: "180px", animationDelay: "0.55s" }}>
               <img src={imgBull} alt="소 캐릭터" className="absolute"
                 style={{ height: "160px", left: "calc(50% - 120px)", bottom: 0, animation: "char-float 3.2s ease-in-out 1s infinite" }} />
-              <div className="absolute" style={{ right: "10%", bottom: 0 }}>
-                <div style={{ transform: "scaleY(-1) rotate(180deg)", animation: "char-float 2.8s ease-in-out 1.4s infinite" }}>
-                  <img src={imgMilk} alt="" style={{ height: "130px" }} />
+              <div className="absolute" style={{ right: "10%", bottom: 0, animation: "char-float 2.8s ease-in-out 1.4s infinite" }}>
+                <div style={{ position: "relative" }}>
+                  <img src={imgMilk} alt="" style={{ height: "130px", transform: "scaleY(-1) rotate(180deg)" }} />
+                  <span className="absolute" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontSize: "36px", color: "#159b3c", top: "30px", left: "50%", transform: "translateX(-50%)" }}>?</span>
                 </div>
-                <span className="absolute" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontSize: "36px", color: "#159b3c", top: "30px", left: "50%", transform: "translateX(-50%)" }}>?</span>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function Quiz2() {
           </div>
         </div>
       </div>
-      {showWrong && <WrongAnswer quizNumber={2} nextPath="/quiz/2/correct" retryPath="/quiz/2" />}
+      {showWrong && <WrongAnswer quizNumber={2} nextPath="/quiz/2/correct" retryPath="/quiz/2" onRetry={() => setShowWrong(false)} />}
     </div>
   );
 }

@@ -7,9 +7,10 @@ interface WrongAnswerProps {
   quizNumber: number;
   nextPath: string;
   retryPath: string;
+  onRetry: () => void;
 }
 
-export default function WrongAnswer({ quizNumber, nextPath, retryPath }: WrongAnswerProps) {
+export default function WrongAnswer({ quizNumber, nextPath, retryPath, onRetry }: WrongAnswerProps) {
   const navigate = useNavigate();
 
   return (
@@ -70,7 +71,7 @@ export default function WrongAnswer({ quizNumber, nextPath, retryPath }: WrongAn
 
         {/* 다시 풀어보기 버튼 */}
         <button
-          onClick={() => navigate(retryPath)}
+          onClick={onRetry}
           className="mt-2 flex items-center justify-center gap-4 rounded-[48px] cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
           style={{
             backgroundColor: "#206c38",

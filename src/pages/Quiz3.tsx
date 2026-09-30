@@ -93,7 +93,7 @@ export default function Quiz3() {
           </div>
         </div>
       </div>
-      {showWrong && <WrongAnswer quizNumber={3} nextPath="/quiz/3/correct" retryPath="/quiz/3" />}
+      {showWrong && <WrongAnswer quizNumber={3} nextPath="/quiz/3/correct" retryPath="/quiz/3" onRetry={() => setShowWrong(false)} />}
     </div>
   );
 }

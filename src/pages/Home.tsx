@@ -28,7 +28,7 @@ export default function Home() {
         <div className="relative z-10 mt-4 inline-flex items-center justify-center anim-float-up-in" style={{ animationDelay: "0.1s" }}>
           <img src={imgBannerBg} alt="" className="h-[48px]" />
           <span className="absolute inset-0 flex items-center justify-center text-white"
-            style={{ fontFamily: "'Mango Byeolbyeol:Regular', sans-serif", fontSize: "24px" }}>
+            style={{ fontFamily: "'Mango Byeolbyeol:Regular', sans-serif", fontSize: "24px", paddingBottom: "8px" }}>
             저탄소 인증 축산물과 친해지는
           </span>
         </div>
