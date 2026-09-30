@@ -1,0 +1,12 @@
+{
+  "title": "축산",
+  "description": "Easily source and manage existing design assets for projects, streamlining collaboration for designers and teams while enhancing workflow efficiency.",
+  "language": "ko",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
