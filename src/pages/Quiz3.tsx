@@ -116,7 +116,7 @@ export default function Quiz3() {
             <img src={imgBgDeco} alt="" className="w-full" />
           </div>
 
-          <footer className="relative z-20 -mt-[2px] mb-[30px] flex w-full max-w-[651px] flex-col items-center gap-[10px] px-4">
+          <footer className="relative z-20 mt-[98px] mb-[30px] flex w-full max-w-[651px] flex-col items-center gap-[10px] px-4">
             <div className="flex w-full items-center justify-center gap-[clamp(12px,4.43vw,35px)]">
               <img src={imgMinistry} alt="농림축산식품부" className="w-[27.67%]" />
               <div className="flex w-[30.82%] shrink-0 items-center gap-[2.75%]">
