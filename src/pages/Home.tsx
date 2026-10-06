@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         {/* Characters & fence scene */}
-        <div className="relative w-full mt-6" style={{ minHeight: "360px" }}>
+        <div className="relative -mt-4 w-full" style={{ minHeight: "360px" }}>
           {/* Fence behind characters */}
           <div className="absolute w-[140%] left-[-20%]" style={{ top: "55%", mixBlendMode: "multiply", zIndex: 1 }}>
             <img src={imgFence} alt="" className="w-full" />
