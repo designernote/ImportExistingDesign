@@ -1,7 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
 const assetPathPrefix = "/assets";
-const imgArrowRight = `${assetPathPrefix}/010d0.svg`;
+const imgSadCow = `${assetPathPrefix}/b5399.png`;
+const imgCowMask = `${assetPathPrefix}/671d4.svg`;
 
 interface WrongAnswerProps {
   quizNumber: number;
@@ -10,89 +9,74 @@ interface WrongAnswerProps {
   onRetry: () => void;
 }
 
-export default function WrongAnswer({ quizNumber, nextPath, retryPath, onRetry }: WrongAnswerProps) {
-  const navigate = useNavigate();
-
+export default function WrongAnswer({ onRetry }: WrongAnswerProps) {
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center z-50 p-6"
-      style={{ backgroundColor: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-[4px]"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wrong-answer-title"
     >
-      <div
-        className="w-full max-w-[560px] rounded-[29px] flex flex-col items-center gap-6 px-8 py-10"
+      <section
+        className="relative aspect-[660/650] max-w-[660px] overflow-hidden rounded-[29px] bg-black/80 backdrop-blur-[7.5px] [container-type:inline-size]"
         style={{
-          backgroundColor: "rgba(0,0,0,0.82)",
-          backdropFilter: "blur(7.5px)",
+          width: "min(calc(100% - 1rem), 660px, calc((100dvh - 2rem) * 660 / 650))",
         }}
       >
-        {/* Q badge */}
-        <div
-          className="flex items-center justify-center rounded-[28.5px] px-5"
-          style={{ backgroundColor: "#eb6767", height: "57px", minWidth: "87px" }}
+        <button
+          type="button"
+          onClick={onRetry}
+          aria-label="오답 팝업 닫기"
+          className="absolute top-[4.15%] right-[3.48%] z-30 cursor-pointer text-[clamp(20px,4.85cqw,32px)] leading-[1.22] text-[#686868] transition-colors hover:text-white"
+          style={{ fontFamily: "'Pretendard:Regular', sans-serif" }}
         >
-          <span
-            style={{
-              fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif",
-              fontSize: "36px",
-              color: "white",
-              lineHeight: "72px",
-            }}
-          >
-            Q{quizNumber}
-          </span>
-        </div>
+          X
+        </button>
 
-        {/* 오답 텍스트 */}
-        <p
-          className="text-center"
-          style={{
-            fontFamily: "'Mango Byeolbyeol:Regular', 'Noto Sans KR', sans-serif",
-            fontSize: "clamp(40px, 8vw, 58px)",
-            color: "#eb6767",
-            lineHeight: "72px",
-          }}
+        <h2
+          id="wrong-answer-title"
+          className="absolute top-[13.38%] left-0 z-20 w-full whitespace-nowrap text-center text-[clamp(32px,8.79cqw,58px)] leading-[10.91cqw] text-[#f8ed8c]"
+          style={{ fontFamily: "'Mango Byeolbyeol:Regular', sans-serif" }}
         >
           오답입니다!
+        </h2>
+
+        <p
+          className="absolute top-[26%] left-0 z-20 w-full whitespace-nowrap text-center text-[clamp(15px,3.64cqw,24px)] leading-[5.91cqw] text-white"
+          style={{ fontFamily: "'Pretendard:Regular', sans-serif" }}
+        >
+          아쉽지만 다시 풀어볼까요?
         </p>
 
-        {/* 설명 */}
-        <p
-          className="text-center"
+        <div
+          className="pointer-events-none absolute top-[33.38%] left-[49.17%] h-[62.62%] w-[49.24%] -translate-x-1/2"
           style={{
-            fontFamily: "'Pretendard:Regular', sans-serif",
-            fontSize: "clamp(18px, 4vw, 24px)",
-            color: "rgba(255,255,255,0.85)",
-            lineHeight: "38px",
+            WebkitMaskImage: `url("${imgCowMask}")`,
+            maskImage: `url("${imgCowMask}")`,
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskSize: "87.38% 70.76%",
+            maskSize: "87.38% 70.76%",
+            WebkitMaskPosition: "63.4% -2.53%",
+            maskPosition: "63.4% -2.53%",
           }}
         >
-          아쉽지만 틀렸습니다.<br />
-          다시 한번 도전해보세요!
-        </p>
+          <img src={imgSadCow} alt="슬픈 표정의 저탄소 소 캐릭터" className="size-full object-cover" />
+        </div>
 
-        {/* 다시 풀어보기 버튼 */}
         <button
+          type="button"
           onClick={onRetry}
-          className="mt-2 flex items-center justify-center gap-4 rounded-[48px] cursor-pointer transition-opacity hover:opacity-90 active:opacity-75"
-          style={{
-            backgroundColor: "#206c38",
-            width: "clamp(240px, 70%, 360px)",
-            height: "80px",
-          }}
+          className="absolute top-[72.77%] left-1/2 z-20 flex h-[14.77%] w-[60.61%] -translate-x-1/2 cursor-pointer items-center justify-center rounded-[999px] bg-[#206c38] backdrop-blur-[2.75px] transition-opacity hover:opacity-90 active:opacity-75"
         >
           <span
-            style={{
-              fontFamily: "'Pretendard:ExtraBold', sans-serif",
-              fontSize: "clamp(20px, 5vw, 26px)",
-              fontWeight: 800,
-              color: "white",
-              letterSpacing: "3px",
-            }}
+            className="whitespace-nowrap text-center text-[clamp(18px,4.85cqw,32px)] leading-none tracking-[0.3em] text-white"
+            style={{ fontFamily: "'Pretendard:ExtraBold', sans-serif", fontWeight: 800 }}
           >
             다시 풀어보기
           </span>
-          <img src={imgArrowRight} alt="" className="h-[22px]" style={{ transform: "rotate(90deg)" }} />
         </button>
-      </div>
+      </section>
     </div>
   );
 }
