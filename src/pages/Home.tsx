@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const assetPathPrefix = "/assets";
+const assetPathPrefix = `${import.meta.env.BASE_URL}assets`;
 const imgChatGpt = `${assetPathPrefix}/774a4.png`;
 const imgGroup8 = `${assetPathPrefix}/e4279.svg`;
 const imgFence = `${assetPathPrefix}/bc9cb.svg`;
