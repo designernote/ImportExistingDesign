@@ -92,7 +92,7 @@ export default function Quiz1Correct() {
                 <p className="h-[6.36cqw]" aria-hidden="true" />
                 <p className="whitespace-nowrap text-[#206c38]">
                   <span className="text-[clamp(16px,4.85cqw,32px)]" style={{ fontFamily: hakgyo }}>
-                    축산물품질평가원
+                    농림축산식품부와 축산물품질평가원
                   </span>
                   <span className="text-[clamp(14px,4.24cqw,28px)]" style={{ fontFamily: pretendard("Regular") }}>
                     은

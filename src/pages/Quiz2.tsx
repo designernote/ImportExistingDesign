@@ -84,7 +84,7 @@ export default function Quiz2() {
               style={{ animationDelay: "0.5s" }}
             >
               <button
-                onClick={() => navigate("/quiz/2/correct")}
+                onClick={() => setShowWrong(true)}
                 aria-label="O, 맞다"
                 className="flex aspect-square w-[35.61%] cursor-pointer items-center justify-center rounded-[17.87%] bg-[#4c7dda] transition-opacity hover:opacity-90 active:opacity-75"
               >
@@ -93,7 +93,7 @@ export default function Quiz2() {
                 </span>
               </button>
               <button
-                onClick={() => setShowWrong(true)}
+                onClick={() => navigate("/quiz/2/correct")}
                 aria-label="X, 아니다"
                 className="flex aspect-square w-[35.61%] cursor-pointer items-center justify-center rounded-[17.87%] bg-[#eb6767] transition-opacity hover:opacity-90 active:opacity-75"
               >
