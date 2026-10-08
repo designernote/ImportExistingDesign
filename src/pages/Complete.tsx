@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+const entryFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdJ_lg_NwbKGzMRPKMNxHXhsog-OfUzGcJG31dUMYm0B1wvQw/viewform";
 
 const assetPathPrefix = `${import.meta.env.BASE_URL}assets`;
 const imgCharacters = `${assetPathPrefix}/0d53e.png`;
@@ -15,8 +16,6 @@ const imgArrowRight = `${assetPathPrefix}/010d0.svg`;
 const pretendard = (weight: string) => `'Pretendard:${weight}', sans-serif`;
 
 export default function Complete() {
-  const navigate = useNavigate();
-
   return (
     <main className="min-h-dvh w-full overflow-hidden bg-[#d3e9dc]">
       <section className="relative flex w-full flex-col items-center overflow-hidden [container-type:inline-size]">
@@ -86,9 +85,10 @@ export default function Complete() {
           >
             추첨을 위해 아래 개인정보를 입력해주세요!
           </p>
-          <button
-            type="button"
-            onClick={() => navigate("/form")}
+          <a
+            href={entryFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex h-[clamp(72px,12.15cqw,96px)] w-[min(80cqw,400px)] cursor-pointer items-center justify-center gap-[min(6.33cqw,50px)] rounded-[999px] bg-[#206c38] pl-[min(6.33cqw,50px)] pr-[min(4.05cqw,32px)] transition-opacity hover:opacity-90 active:opacity-75"
           >
             <span
@@ -98,7 +98,7 @@ export default function Complete() {
               개인정보 입력
             </span>
             <img src={imgArrowRight} alt="" className="w-[min(3.45cqw,27.24px)] rotate-90" />
-          </button>
+          </a>
         </div>
 
         <div className="relative z-10 h-[clamp(70px,15.19cqw,120px)]" aria-hidden="true" />
