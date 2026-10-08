@@ -57,18 +57,18 @@ export default function Home() {
         </div>
 
         {/* Characters & fence scene */}
-        <div className="relative -mt-4 w-full" style={{ minHeight: "360px" }}>
+        <div className="relative -mt-4 aspect-[11/6] w-full">
           {/* Fence behind characters */}
           <div className="absolute w-[140%] left-[-20%]" style={{ top: "55%", mixBlendMode: "multiply", zIndex: 1 }}>
             <img src={imgFence} alt="" className="w-full" />
           </div>
 
           {/* Character group */}
-          <div className="relative flex justify-center" style={{ zIndex: 2, height: "320px" }}>
+          <div className="absolute bottom-0 left-1/2 z-[2] aspect-[3/2] w-[81.82%] max-w-[540px] -translate-x-1/2">
             <img
               src={imgChatGpt}
               alt="저탄소 인증 축산물 캐릭터"
-              className="w-[90%] max-w-[540px] object-contain object-bottom"
+              className="size-full object-contain object-bottom"
               style={{
                 animation: 'char-enter 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s both, char-float 3.6s ease-in-out 1.3s infinite',
               }}
@@ -120,16 +120,19 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="relative z-10 mt-6 mb-8 px-4 w-full flex flex-col items-center gap-3">
-          <div className="flex items-center gap-6 flex-wrap justify-center">
-            <img src={imgMinistry} alt="농림축산식품부" className="h-[40px]" />
-            <div className="flex items-center gap-1">
-              <img src={imgLivestockIcon} alt="" className="h-[30px]" />
-              <img src={imgLivestock} alt="축산물품질평가원" className="h-[21px]" />
+        <div className="relative z-10 mt-6 mb-8 flex w-full flex-col items-center gap-3 px-4">
+          <div className="flex w-full max-w-[651px] items-center justify-center gap-[clamp(12px,4.43vw,35px)]">
+            <img src={imgMinistry} alt="농림축산식품부" className="w-[27.67%]" />
+            <div className="flex w-[30.82%] shrink-0 items-center gap-[2.75%]">
+              <img src={imgLivestockIcon} alt="" className="w-[14.72%]" />
+              <img src={imgLivestock} alt="축산물품질평가원" className="w-[82.58%]" />
             </div>
-            <img src={imgEdiya} alt="에디야커피" className="h-[20px]" />
+            <img src={imgEdiya} alt="에디야커피" className="w-[30.73%]" />
           </div>
-          <p style={{ fontFamily: "'Pretendard:Regular', sans-serif", fontSize: "18px", color: "#7b8b80", textAlign: "center" }}>
+          <p
+            className="text-center text-[clamp(12px,2.28vw,18px)] text-[#7b8b80]"
+            style={{ fontFamily: "'Pretendard:Regular', sans-serif" }}
+          >
             축산물품질평가원 ALL RIGHTS RESERVED
           </p>
         </div>
