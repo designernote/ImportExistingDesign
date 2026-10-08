@@ -1,9 +1,12 @@
 {
-  "title": "축산",
-  "description": "Easily source and manage existing design assets for projects, streamlining collaboration for designers and teams while enhancing workflow efficiency.",
+  "title": "이디야 OX퀴즈 이벤트",
+  "description": "간단한 OX 퀴즈 풀고 저탄소 인증 축산물 알아보고 이디야 커피 기프티콘 받아가세요!",
   "language": "ko",
   "robots": {
     "index": false
+  },
+  "openGraph": {
+    "image": "https://designernote.github.io/quizEvent/og-image.png"
   },
   "accessibility": {
     "addBypassLinks": false,
